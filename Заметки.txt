@@ -1,0 +1,43 @@
+Запуск с терминала java -jar build/libs/dbwebservice-0.0.1-SNAPSHOT.jar
+Отправка тестового реквеста cd:
+C:\Users\Jeff\IdeaProjects\DBWebService\src\main\resources
+curl --header "content-type: text/xml" -d @plusRequest.xml http://localhost:8080/ws
+
+"Правильный" формат xml-реквеста из палаты мер и весов:
+<v:Envelope xmlns:c="http://schemas.xmlsoap.org/soap/encoding/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:v="http://schemas.xmlsoap.org/soap/envelope/">
+  <v:Header/>
+  <v:Body>
+    <n0:plusRequest xmlns:n0="http://webservice">
+      <n0:a i:type="d:int">2</n0:a>
+      <n0:b i:type="d:int">3</n0:b>
+      <n0:string i:type="d:string">somestring</n0:string>
+    </n0:plusRequest>
+  </v:Body>
+</v:Envelope>
+
+Обязательно неймспейсы во всех элементах
+
+<v:Envelope xmlns:c="http://schemas.xmlsoap.org/soap/encoding/" xmlns:d="http://www.w3.org/2001/XMLSchema" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:v="http://schemas.xmlsoap.org/soap/envelope/">
+  <v:Header/>
+  <v:Body>
+    <n0:testGetDataRequest xmlns:n0="http://webservice">
+      <n0:string i:type="d:string">some string</n0:string>
+      <n0:dataList i:type="n0:dataList">
+        <n0:_id i:type="d:string">id</n0:_id>
+        <n0:date i:type="d:string">Date</n0:date>
+        <n0:org i:type="d:string">Org</n0:org>
+        <n0:loc i:type="d:string">Loc</n0:loc>
+        <n0:status i:type="d:string">Status</n0:status>
+        <n0:desc i:type="d:string">Desc</n0:desc>
+      </n0:dataList>
+      <n0:dataList i:type="n0:dataList">
+        <n0:_id i:type="d:string">id</n0:_id>
+        <n0:date i:type="d:string">Date</n0:date>
+        <n0:org i:type="d:string">Org</n0:org>
+        <n0:loc i:type="d:string">Loc</n0:loc>
+        <n0:status i:type="d:string">Status</n0:status>
+        <n0:desc i:type="d:string">Desc</n0:desc>
+      </n0:dataList>
+    </n0:testGetDataRequest>
+  </v:Body>
+</v:Envelope>

@@ -1,0 +1,65 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice"
+           targetNamespace="http://webservice" elementFormDefault="qualified">
+
+    <xs:element name="testRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="testResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="response" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:element name="plusRequest" xmlns:tns="http://webservice">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" type="xs:int"/>
+				<xs:element name="b" type="xs:int"/>
+				<xs:element name="string" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:element name="minusRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="a" type="xs:int"/>
+				<xs:element name="b" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:element name="testGetDataRequest">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="string" type="xs:string"/>
+                <xs:element name="data" minOccurs="0" maxOccurs="unbounded" type="tns:data"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:complexType name="dataList">
+		<xs:sequence>
+                <xs:element name="data" minOccurs="0" maxOccurs="unbounded" type="tns:data"/>
+        </xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="data">
+		<xs:sequence>
+			<xs:element name="_id" type="xs:string"></xs:element>
+			<xs:element name="date" type="xs:string"></xs:element>
+			<xs:element name="org" type="xs:string"></xs:element>
+			<xs:element name="loc" type="xs:string"></xs:element>
+			<xs:element name="status" type="xs:string"></xs:element>
+			<xs:element name="desc" type="xs:string"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
