@@ -1,0 +1,55 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice"
+           targetNamespace="http://webservice" elementFormDefault="qualified">
+
+	<xs:element name="dataExchangeRequest">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="username" type="xs:string"/>
+				<xs:element name="password" type="xs:string"/>
+				<xs:element name="stb" type="tns:table"/>
+				<xs:element name="status" type="tns:table"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:element name="dataExchangeResponse">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="org" type="tns:table"/>
+				<xs:element name="statusN" type="tns:table"/>
+				<xs:element name="userS" type="tns:table"/>
+				<xs:element name="machine" type="tns:table"/>
+				<xs:element name="orgMachine" type="tns:table"/>
+				<xs:element name="locats" type="tns:table"/>
+				<xs:element name="texts" type="tns:table"/>
+				<xs:element name="textScan" type="tns:table"/>
+				<xs:element name="stb" type="tns:table"/>
+				<xs:element name="status" type="tns:table"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:element name="getUsersRequest">
+    </xs:element>
+
+	<xs:element name="getUsersResponse">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="usersen" type="tns:table"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+	<xs:complexType name="table">
+            <xs:sequence>
+				<xs:element name="rows" type="tns:row" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+    </xs:complexType>
+
+	<xs:complexType name="row">
+            <xs:sequence>
+				<xs:element name="dataList" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
