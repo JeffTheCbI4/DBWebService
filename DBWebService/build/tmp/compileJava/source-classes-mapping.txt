@@ -1,0 +1,20 @@
+com/sibsiu/dbwebservice/WebConfig.java
+ com.sibsiu.dbwebservice.WebConfig
+com/sibsiu/dbwebservice/DbWebServiceApplication.java
+ com.sibsiu.dbwebservice.DbWebServiceApplication
+webservice/package-info.java
+ webservice.package-info
+webservice/GetUsersResponse.java
+ webservice.GetUsersResponse
+com/sibsiu/dbwebservice/WebEndpoint.java
+ com.sibsiu.dbwebservice.WebEndpoint
+webservice/Table.java
+ webservice.Table
+webservice/DataExchangeRequest.java
+ webservice.DataExchangeRequest
+webservice/ObjectFactory.java
+ webservice.ObjectFactory
+webservice/Row.java
+ webservice.Row
+webservice/DataExchangeResponse.java
+ webservice.DataExchangeResponse

@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://webservice">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:minusRequest>
+            <gs:a>2</gs:a>
+			<gs:b>2</gs:b>
+        </gs:minusRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
